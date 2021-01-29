@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.IO;
+using System.IO.Compression;
 
 namespace MeTotem
 {
@@ -45,7 +46,9 @@ namespace MeTotem
 			Console.WriteLine("done");
 
 			Console.Write("Building pack...");
-
+			string packFileName = "MeTotem - " + userName + ".mcpack";
+			File.Delete(packFileName);
+			ZipFile.CreateFromDirectory("Pack", packFileName);
 			Console.WriteLine("done");
 
 			Console.WriteLine("Finished!");
