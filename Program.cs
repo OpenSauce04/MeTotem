@@ -32,6 +32,15 @@ namespace MeTotem
 			Console.Write("Personalising manifest.json...");
 			string text = File.ReadAllText("Pack/manifest.json");
 			text = text.Replace("NAME", userName);
+			using (var client = new WebClient())
+			{
+				text = text.Replace("uuid1", client.DownloadString("https://www.uuidtools.com/api/generate/v4")
+					                                                                                           .Replace("[\"", String.Empty)
+																											   .Replace("\"]", String.Empty));
+				text = text.Replace("uuid2", client.DownloadString("https://www.uuidtools.com/api/generate/v4")
+																											   .Replace("[\"", String.Empty)
+																											   .Replace("\"]", String.Empty));
+			}
 			File.WriteAllText("Pack/manifest.json", text);
 			Console.WriteLine("done");
 
