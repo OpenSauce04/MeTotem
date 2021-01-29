@@ -1,8 +1,8 @@
 {
     "format_version": 2,
     "header": {
-        "description": "NAME's MeTotem",
-        "name": "Custom generated totem",
+        "name": "NAME's MeTotem",
+        "description": "Custom generated totem",
         "uuid": "uuid1",
         "version": [1, 0, 0],
         "min_engine_version": [ 1, 14, 0 ]
