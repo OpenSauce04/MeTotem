@@ -13,10 +13,6 @@ namespace MeTotem
 			Console.Write("Enter the desired username: ");
 			userName = Console.ReadLine();
 
-			Console.Write("Checking username...");
-
-			Console.WriteLine("done");
-
 			Console.Write("Getting body texture...");
 
 			Console.WriteLine("done");
