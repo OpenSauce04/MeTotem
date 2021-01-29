@@ -2,12 +2,14 @@
 using System.Net;
 using System.IO;
 using System.IO.Compression;
-
+using System.Drawing;
+using System.Drawing.Imaging;
 namespace MeTotem
 {
 	class Program
 	{
 		public static string userName;
+		public static Image bodyTexture;
 		static void Main(string[] args)
 		{
 			Console.WriteLine("MeTotem v0");
@@ -19,7 +21,19 @@ namespace MeTotem
 			Console.Write("Getting body texture...");
 			using (var client = new WebClient())
 			{
-				client.DownloadFile("https://minotar.net/armor/body/" + userName + "/16.png", "PackBE/textures/items/totem.png");
+				using (MemoryStream memstr = new MemoryStream(client.DownloadData("https://minotar.net/armor/body/" + userName + "/16.png")))
+				{
+					bodyTexture = Image.FromStream(memstr);
+				}
+			}
+			Console.WriteLine("done");
+
+			Console.Write("Processing body texture...");
+			Bitmap bitmap = new Bitmap(32, 32);
+			using (Graphics grfx = Graphics.FromImage(bitmap))
+			{
+				grfx.DrawImage(bodyTexture, 8, 0);
+				bitmap.Save("./PackBE/textures/items/totem.png", ImageFormat.Png);
 			}
 			Console.WriteLine("done");
 
