@@ -30,7 +30,9 @@ namespace MeTotem
 			Console.WriteLine("done");
 
 			Console.Write("Personalising manifest.json...");
-
+			string text = File.ReadAllText("Pack/manifest.json");
+			text = text.Replace("NAME", userName);
+			File.WriteAllText("Pack/manifest.json", text);
 			Console.WriteLine("done");
 
 			Console.Write("Building pack...");
