@@ -16,6 +16,12 @@
     <None Update="PackBE\textures\items\file">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="PackJava\assets\minecraft\textures\item\file">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PackJava\pack.mcmeta">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Pack\manifest.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

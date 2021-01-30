@@ -12,6 +12,7 @@ namespace MeTotem
 			{
 				grfx.DrawImage(bodyTexture, 8, 0);
 				bitmap.Save("./PackBE/textures/items/totem.png", ImageFormat.Png);
+				bitmap.Save("./PackJava/assets/minecraft/textures/item/totem_of_undying.png", ImageFormat.Png);
 			}
 		}
 	}

@@ -7,9 +7,12 @@ namespace MeTotem
     {
         public static void Build()
         {
-            string packFileName = "MeTotem - " + userName + ".mcpack";
-            File.Delete(packFileName);
-            ZipFile.CreateFromDirectory("PackBE", packFileName);
+            string bPackFileName = "MeTotem-" + userName + "-Bedrock.mcpack";
+            string jPackFileName = "MeTotem-" + userName + "-Java.zip";
+            File.Delete(bPackFileName);
+            File.Delete(jPackFileName);
+            ZipFile.CreateFromDirectory("PackBE", bPackFileName);
+            ZipFile.CreateFromDirectory("PackJava", jPackFileName);
         }
     }
 }

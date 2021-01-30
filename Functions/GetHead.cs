@@ -9,6 +9,7 @@ namespace MeTotem
             using (var client = new WebClient())
             {
                 client.DownloadFile("https://minotar.net/helm/" + userName + "/256.png", "PackBE/pack_icon.png");
+                client.DownloadFile("https://minotar.net/helm/" + userName + "/256.png", "PackJava/pack.png");
             }
         }
     }

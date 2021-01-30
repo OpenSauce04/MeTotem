@@ -8,18 +8,22 @@ namespace MeTotem
 	{
         public static void Personalise()
         {
-			string text = File.ReadAllText("PackBE/manifest.json");
-			text = text.Replace("NAME", userName);
+			string bmanifest = File.ReadAllText("PackBE/manifest.json");
+			bmanifest = bmanifest.Replace("NAME", userName);
 			using (var client = new WebClient())
 			{
-				text = text.Replace("uuid1", client.DownloadString("https://www.uuidtools.com/api/generate/v4")
+				bmanifest = bmanifest.Replace("uuid1", client.DownloadString("https://www.uuidtools.com/api/generate/v4")
 																											   .Replace("[\"", String.Empty)
 																											   .Replace("\"]", String.Empty));
-				text = text.Replace("uuid2", client.DownloadString("https://www.uuidtools.com/api/generate/v4")
+				bmanifest = bmanifest.Replace("uuid2", client.DownloadString("https://www.uuidtools.com/api/generate/v4")
 																											   .Replace("[\"", String.Empty)
 																											   .Replace("\"]", String.Empty));
 			}
-			File.WriteAllText("PackBE/manifest.json", text);
+			File.WriteAllText("PackBE/manifest.json", bmanifest);
+
+			string jmanifest = File.ReadAllText("PackBE/manifest.json");
+			jmanifest = jmanifest.Replace("NAME", userName);
+			File.WriteAllText("PackJava/pack.mcmeta", bmanifest);
 		}
     }
 }
