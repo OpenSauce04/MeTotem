@@ -8,6 +8,7 @@ namespace MeTotem
         {
             Directory.Delete("./PackBE", true);
             Directory.Delete("./PackJava", true);
+            File.Delete("PackData.zip");
         }
     }
 }

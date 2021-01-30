@@ -1,4 +1,6 @@
-﻿using System.IO.Compression;
+﻿using System.IO;
+using System.IO.Compression;
+using System.Reflection;
 
 namespace MeTotem
 {
@@ -6,7 +8,14 @@ namespace MeTotem
     {
         public static void ExtractData()
         {
-            ZipFile.ExtractToDirectory("./PackData.zip", "./");
+            using (var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream("MeTotem.PackData.zip"))
+            {
+                using (var file = new FileStream("PackData.zip", FileMode.Create, FileAccess.Write))
+                {
+                    resource.CopyTo(file);
+                }
+            }
+            ZipFile.ExtractToDirectory("PackData.zip", "./");
         }
     }
 }
