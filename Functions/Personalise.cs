@@ -21,9 +21,9 @@ namespace MeTotem
 			}
 			File.WriteAllText("PackBE/manifest.json", bmanifest);
 
-			string jmanifest = File.ReadAllText("PackBE/manifest.json");
+			string jmanifest = File.ReadAllText("PackJava/pack.mcmeta");
 			jmanifest = jmanifest.Replace("NAME", userName);
-			File.WriteAllText("PackJava/pack.mcmeta", bmanifest);
+			File.WriteAllText("PackJava/pack.mcmeta", jmanifest);
 		}
     }
 }
