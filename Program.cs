@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Net;
-using System.IO;
-using System.IO.Compression;
 using System.Drawing;
 
 namespace MeTotem
@@ -17,7 +14,15 @@ namespace MeTotem
 
 			Console.Write("Enter the desired username: ");
 			userName = Console.ReadLine();
-			
+
+			Console.Write("Extracting Data...");
+			try
+			{
+				CleanUp();
+			} catch(System.IO.DirectoryNotFoundException) {} // If the directory isn't already there, move on
+			ExtractData();
+			Console.WriteLine("done");
+
 			Console.Write("Getting body texture...");
 			GetBody();
 			Console.WriteLine("done");
@@ -36,6 +41,10 @@ namespace MeTotem
 
 			Console.Write("Building pack...");
 			Build();
+			Console.WriteLine("done");
+
+			Console.Write("Cleaning up...");
+			CleanUp();
 			Console.WriteLine("done");
 
 			Console.WriteLine("Finished!");

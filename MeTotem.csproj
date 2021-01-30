@@ -16,6 +16,9 @@
     <None Update="PackBE\textures\items\file">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="PackData.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="PackJava\assets\minecraft\textures\item\file">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
