@@ -9,7 +9,7 @@ namespace MeTotem
 		public static Image bodyTexture;
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("MeTotem v0");
+			Console.WriteLine("MeTotem v1.0.0");
 			Console.WriteLine("---------------------\n");
 
 			Console.Write("Enter the desired username: ");
